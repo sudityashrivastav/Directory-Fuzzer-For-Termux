@@ -31,7 +31,7 @@ go build fuzzer.go
 ./fuzzer https://example.com wordlist.txt 40 200,206
 ```
 
-Access Fuzzer from anywhere:
+Access Fuzzer from any directory
 
 ```bash
 cp fuzzer /data/data/com.termux/files/usr/bin/fuzzer
