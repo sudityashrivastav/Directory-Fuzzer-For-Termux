@@ -22,14 +22,14 @@ func main() {
 	}
 
 	var (
-		URL          = os.Args[1]
-		fileLocation = os.Args[2]
-		threadsSTR   = os.Args[3]
+		URL                 = os.Args[1]
+		fileLocation        = os.Args[2]
+		threadsSTR          = os.Args[3]
 		status_codes_string = os.Args[4]
 	)
 
 	status_codes := strings.Split(status_codes_string, ",")
-	
+
 	threads, err := strconv.Atoi(threadsSTR)
 
 	if err != nil {
@@ -61,11 +61,12 @@ func main() {
 }
 
 func usage() {
-	fmt.Println("USAGE: go run main.go <url> <wordlist> <threads>")
+	fmt.Println("USAGE: ./fuzzer <url> <wordlist> <threads> <status codes>")
+	fmt.Println("Example:\n ./fuzzer https://google.com wordlist.txt 40 200,202,206")
 	os.Exit(0)
 }
 
-func start(url string, word string, semaphore chan struct{}) {
+func start(url string, word string, semaphore chan struct{}, status_codes []string) {
 
 	defer wg.Done()
 
@@ -88,12 +89,11 @@ func start(url string, word string, semaphore chan struct{}) {
 	}
 	defer res.Body.Close()
 
-	for _,status_string = range status_codes{
-		status := strconv.Atoi(status_string)
+	for _, status_string := range status_codes {
+		status, _ := strconv.Atoi(status_string)
 		if res.StatusCode == status {
-		fmt.Println("Found something\t\t", address)
+			fmt.Println(res.StatusCode, "\t", address)
 		}
 	}
-	
 
 }
