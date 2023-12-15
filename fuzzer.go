@@ -61,8 +61,9 @@ func main() {
 }
 
 func usage() {
-	fmt.Println("USAGE: ./fuzzer <url> <wordlist> <threads> <status codes>")
-	fmt.Println("Example:\n ./fuzzer https://google.com wordlist.txt 40 200,202,206")
+	fmt.Println("\nExample:")
+	fmt.Println("./fuzzer <url> <wordlist> <threads> <status codes>")
+	fmt.Println("./fuzzer https://google.com wordlist.txt 40 200,202,206\n")
 	os.Exit(0)
 }
 
