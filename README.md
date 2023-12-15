@@ -17,5 +17,9 @@ cd Directory-Fuzzer-For-Termux
 ```
 
 ```bash
-go run main.go <url> <wordlist> <threads>
+go build main.go
+```
+
+```bash
+./main <url> <wordlist> <threads>
 ```
