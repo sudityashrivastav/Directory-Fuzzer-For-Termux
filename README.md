@@ -3,6 +3,17 @@
 
 ## Written in Go for brazingly fast speed
 
+## Changelog Version 1.2:
+
+1. Now you add negative status code. By defaul 404 is set.
+2. Colorfull output for better user experience.
+3. Added banner as well.
+4. Added a sample wordlist. 
+
+## ToDo:
+
+1. working on progress bar to show how much wordlist has been completed.
+
 ## How to use?
 
 ### Installation:
@@ -24,11 +35,11 @@ go build fuzzer.go
 
 ### Example usage:
 ```bash
-./fuzzer <url> <wordlist> <threads> <status codes>
+./fuzzer <url> <wordlist> <threads> <negative status codes>
 ```
 
 ```bash
-./fuzzer https://example.com wordlist.txt 40 200,206
+./fuzzer https://example.com wordlist.txt 40 404,500
 ```
 
 Access Fuzzer from any directory
@@ -40,7 +51,7 @@ cp fuzzer /data/data/com.termux/files/usr/bin/fuzzer
 Now you can access the Fuzzer from any directory in the Termux.
 
 ```bash
-fuzzer <url> <wordlist> <threads> <status codes>
+fuzzer <url> <wordlist> <threads> <negative status codes>
 ```
 
 ## Want more features?
