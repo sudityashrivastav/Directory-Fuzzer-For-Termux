@@ -30,28 +30,28 @@ cd Directory-Fuzzer-For-Termux
 ```
 
 ```bash
-go build fuzzer.go
+go build .
 ```
 
 ### Example usage:
 ```bash
-./fuzzer <url> <wordlist> <threads> <negative status codes>
+fuzz <url> <wordlist> <threads> <negative status codes>
 ```
 
 ```bash
-./fuzzer https://example.com wordlist.txt 40 404,500
+fuzz https://example.com wordlist.txt 40 404,500
 ```
 
 Access Fuzzer from any directory
 
 ```bash
-cp fuzzer /data/data/com.termux/files/usr/bin/fuzzer
+cp fuzz /data/data/com.termux/files/usr/bin/fuzz
 ```
 
 Now you can access the Fuzzer from any directory in the Termux.
 
 ```bash
-fuzzer <url> <wordlist> <threads> <negative status codes>
+fuzz <url> <wordlist> <threads> <negative status codes>
 ```
 
 ## Want more features?

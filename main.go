@@ -112,7 +112,7 @@ func start(url string, word string, semaphore chan struct{}, status_codes []stri
 }
 
 func usage(msg string) {
-	fmt.Println("\n\033[31mError: ", msg, "\033[0m")
+	fmt.Println("\nError:\033[31m ", msg, "\033[0m")
 	fmt.Println("\033[32mfuzz <url> <wordlist> <threads> <negative status codes>")
 	fmt.Println("fuzz https://google.com wordlist.txt 40 404,500,302\033[0m")
 	os.Exit(0)
